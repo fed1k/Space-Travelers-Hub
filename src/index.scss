@@ -15,21 +15,7 @@ nav {
   margin-bottom: 2.313rem;
   border-bottom : 1px solid $pinkishGrey;
   padding: 2px 7px;
-}
 
-.logo-img {
-  height: 5rem;
-}
-
-div.title {
-  display: flex;
-}
-
-h1 {
-  margin-top: 25px;
-}
-
-nav {
   ul {
     display: flex;
   }
@@ -44,6 +30,18 @@ nav {
     cursor: pointer;
     text-decoration: underline;
   }
+}
+
+.logo-img {
+  height: 5rem;
+}
+
+div.title {
+  display: flex;
+}
+
+h1 {
+  margin-top: 25px;
 }
 
 .profile {
