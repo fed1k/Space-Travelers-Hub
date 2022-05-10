@@ -48,3 +48,39 @@ h1 {
   border-left: 2px solid #000;
   padding-left: 10px;
 }
+
+.rocket-images {
+  width: 180px;
+  height: 130px;
+}
+
+.main-rocket-div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 15px 10%;
+}
+
+.rocket-divider {
+  display: flex;
+  gap: 14px;
+  width: 60%;
+
+  p {
+    padding: 8px 0;
+  }
+
+  button {
+    padding: 6px 8px;
+    background-color: #dfdfdf;
+    border: 1px solid #d5d5d5;
+    transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transform: scale(1.05);
+      transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+}
