@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 $blue: #00ff;
 $pinkishGrey: #c4c4c4;
 
@@ -50,9 +52,14 @@ h1 {
 }
 
 .rocket-images {
-  width: 180px;
-  height: 130px;
+  width: 200px;
+  height: 150px;
 }
+
+// #cancel {
+//   background-color: green;
+//   color: white;
+// }
 
 .main-rocket-div {
   display: flex;
@@ -64,10 +71,17 @@ h1 {
 .rocket-divider {
   display: flex;
   gap: 14px;
-  width: 60%;
+  width: 70%;
+  align-items: center;
+
+  h3 {
+    font-size: 22px;
+  }
 
   p {
     padding: 8px 0;
+    line-height: 24px;
+    font-family: 'Inter';
   }
 
   button {
@@ -82,5 +96,16 @@ h1 {
       transform: scale(1.05);
       transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
+
+    &:active {
+      transform: scale(1.01);
+    }
   }
+}
+
+.reserve-text {
+  background-color: lightblue;
+  padding: 4px;
+  border-radius: 6px;
+  margin-right: 8px;
 }
