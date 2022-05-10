@@ -1,0 +1,50 @@
+$blue: #00ff;
+$pinkishGrey: #c4c4c4;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+//NAVBAR
+nav {
+  display: flex;
+  height: 5.938rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.313rem;
+  border-bottom: 1px solid $pinkishGrey;
+  padding: 2px 7px;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    list-style: none;
+    margin-right: 12px;
+    color: $blue;
+  }
+
+  li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.logo-img {
+  height: 5rem;
+}
+
+div.title {
+  display: flex;
+}
+
+h1 {
+  margin-top: 25px;
+}
+
+.profile {
+  border-left: 2px solid #000;
+  padding-left: 10px;
+}
