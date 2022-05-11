@@ -1,9 +1,10 @@
 import { React, useEffect } from 'react';
 import './index.scss';
 import { useDispatch } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Missions from './missions/missionPage';
 import { fetchMissions } from './missions/missions';
+import Missions from './missions/missionPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -15,8 +16,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        <Missions />
       </header>
+      <main>
+        <Routes>
+          <Route path="/missions" element={<Missions />} />
+        </Routes>
+      </main>
     </div>
   );
 }
