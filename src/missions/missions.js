@@ -1,35 +1,54 @@
-import { fetchMissions, createMission } from './api';
+const FETCH = 'FETCH';
+const SHOW = 'SHOW';
+const TOGGLE_BUTTON = 'TOGGLE_BUTTON';
+const baseUrl = 'https://api.spacexdata.com/v3/missions';
 
-const ADD_MISSION = 'ADD_MISSION';
-const GET_MISSION = 'GET_MISSION';
-
-export const addMission = (payload) => async (dispatch) => {
-  await createMission(payload);
-  dispatch({
-    type: ADD_MISSION,
-    payload,
-  });
+const initialState = {
+  missions: [],
+  show: false,
 };
 
-export const getMissions = () => async (dispatch) => {
-  const result = await fetchMissions();
-  const missions = Object.entries(result).map(([missionId, [mission]]) => ({
-    id: missionId,
-    missionName: mission,
-  }));
-  dispatch({
-    type: GET_MISSION,
-    payload: missions,
-  });
+export const fetchMissions = () => (dispatch) => {
+  dispatch({ type: SHOW });
+  return (baseUrl, 'GET')
+    .then((response) => response.json())
+    .then((data) => dispatch({ type: FETCH, data }));
 };
 
-export const missionReducer = (state = initialState, action) => {
-  const missions = [...state, action.payload];
+export const toggleButton = (id) => ({
+  type: TOGGLE_BUTTON,
+  id,
+});
+
+export const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MISSION:
-      return action.payload;
-    case ADD_MISSION:
-      return missions;
+    case FETCH: {
+      return {
+        ...state,
+        missions: [...action.data],
+        show: false,
+      };
+    }
+
+    case SHOW: {
+      return {
+        ...state,
+        show: true,
+      };
+    }
+
+    case TOGGLE_BUTTON: {
+      const newMission = state.missions.map((mission) => {
+        if (mission.mission_id !== action.id) {
+          return mission;
+        }
+        return { ...mission, reserved: !mission.reserved };
+      });
+      return {
+        ...state,
+        missions: newMission,
+      };
+    }
     default:
       return state;
   }
