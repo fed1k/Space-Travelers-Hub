@@ -83,23 +83,23 @@ h1 {
     line-height: 24px;
     font-family: 'Inter';
   }
+}
 
-  button {
-    padding: 6px 8px;
-    background-color: #dfdfdf;
-    border: 1px solid #d5d5d5;
+button {
+  padding: 6px 8px;
+  background-color: #dfdfdf;
+  border: 1px solid #d5d5d5;
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(1.05);
     transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
 
-    &:hover {
-      cursor: pointer;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      transform: scale(1.05);
-      transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-
-    &:active {
-      transform: scale(1.01);
-    }
+  &:active {
+    transform: scale(1.01);
   }
 }
 
@@ -108,4 +108,10 @@ h1 {
   padding: 4px;
   border-radius: 6px;
   margin-right: 8px;
+}
+
+.myProfile {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20%;
 }

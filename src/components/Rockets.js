@@ -2,15 +2,15 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createActionForReserve, createActionForCancel } from '../rocketsRedux/fetchData';
 
-let count = 0;
 const Rocket = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => (state));
+  const data = useSelector((state) => state);
   const reserveHandler = (id) => {
-    count += 1;
-    if (count % 2 !== 0) dispatch(createActionForReserve(id));
-    if (count % 2 === 0) dispatch(createActionForCancel(id));
-    data.map((i) => console.log(i));
+    dispatch(createActionForReserve(id));
+  };
+
+  const cancelHandler = (id) => {
+    dispatch(createActionForCancel(id));
   };
 
   return (
@@ -24,7 +24,12 @@ const Rocket = () => {
               {rocket.reserved && (<span className="reserve-text">Reserved</span>)}
               {rocket.description}
             </p>
-            <button type="button" onClick={() => reserveHandler(rocket.id)}>{rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}</button>
+            {!rocket.reserved && (
+              <button type="button" onClick={() => reserveHandler(rocket.id)}>Reserve Rocket</button>
+            )}
+            {rocket.reserved && (
+            <button type="button" onClick={() => cancelHandler(rocket.id)}>Cancel Reservation</button>
+            )}
           </div>
         </div>
       ))}
