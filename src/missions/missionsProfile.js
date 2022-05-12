@@ -6,13 +6,13 @@ const MissionProfile = () => {
   const data = useSelector((state) => state);
 
   return (
-    <div>
+    <div className="myMissions">
       <div>
         <h1>My Missions</h1>
         {data.map((i) => i.reserved && (
-          <div>
-            <h1>{i.mission_name}</h1>
-            <button type="button"><Link to="/missions">To Leave Mission</Link></button>
+          <div className="joined">
+            <h2>{i.mission_name}</h2>
+            <Link to="/missions" className="leavetext"><button type="button" className="leave">To leave</button></Link>
           </div>
         ))}
       </div>
