@@ -54,7 +54,7 @@ Use the following steps to run this Project locally:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/isaacpitwa/space-travelers/issues).
+Feel free to check the [issues page](https://github.com/fed1k/Space-Travelers-Hub/issues).
 
 ## Show your support
 
