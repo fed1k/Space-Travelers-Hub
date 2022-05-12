@@ -14,15 +14,15 @@ const Mission = (props) => {
 
   return (
     <tr>
-      <td>{name}</td>
+      <th>{name}</th>
       <td>{description}</td>
       <td>
-        <button type="button">
+        <button type="button" className={`member ${joined}`}>
           {joined ? 'Active Member' : 'NOT A MEMBER'}
         </button>
       </td>
       <td>
-        <button type="button" onClick={join}>
+        <button type="button" className={`join ${joined}`} onClick={join}>
           {joined ? 'Leave Mission' : 'Join Mission'}
         </button>
       </td>
