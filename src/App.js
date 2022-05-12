@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { fetchMissions } from './missions/missions';
 import Missions from './missions/missionPage';
+import MissionProfile from './missions/missionsProfile';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/missions" element={<Missions />} />
+          <Route path="/myprofile" element={<MissionProfile />} />
         </Routes>
       </main>
     </div>
