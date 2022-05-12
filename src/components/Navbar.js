@@ -14,7 +14,7 @@ const Navbar = () => (
       <ul>
         <li><NavLink to="/">Rockets</NavLink></li>
         <li><NavLink to="/missions">Missions</NavLink></li>
-        <li className="profile">My Profile</li>
+        <li className="profile"><NavLink to="/myprofile">My Profile</NavLink></li>
       </ul>
     </div>
   </nav>
