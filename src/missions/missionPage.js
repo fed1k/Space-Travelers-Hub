@@ -9,7 +9,7 @@ const Missions = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Mission</th>
             <th>Description</th>
             <th>Status</th>
             <th>ChangeStatus</th>
