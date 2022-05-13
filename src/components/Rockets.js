@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createActionForReserve, createActionForCancel } from '../rocketsRedux/fetchData';
+import fetchData, { createActionForReserve, createActionForCancel } from '../rocketsRedux/fetchData';
 
 const Rocket = () => {
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchData());
-  //   console.log('rerendered rockets');
-  // }, []);
+  useEffect(() => {
+    dispatch(fetchData());
+    console.log('rerendered rockets');
+  }, []);
   const dataRockets = useSelector((state) => state.rockets);
   const reserveHandler = (id) => {
     dispatch(createActionForReserve(id));
