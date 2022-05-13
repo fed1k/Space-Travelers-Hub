@@ -1,9 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Mission from '../components/missionComponent';
+// import { fetchMissions } from '../rocketsRedux/missions';
 
 const Missions = () => {
-  const missions = useSelector((state) => state);
+  const missions = useSelector((state) => state.missions);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchMissions());
+  //   console.log('rerendered missions');
+  // }, []);
   return (
     <section>
       <table>

@@ -13,11 +13,12 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchData());
+    // dispatch(fetchMissions());
   }, []);
-  // useEffect(() => {
-  //   dispatch(fetchMissions());
-  // }, [dispatch]);
-
+  // const rockets = useSelector((state) => state.rockets);
+  // const reserveRocket = (id) => {
+  //   dispatch(createActionForReserve(id));
+  // };
   return (
     <div className="App">
       <header className="App-header">

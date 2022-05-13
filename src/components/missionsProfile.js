@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const MissionProfile = () => {
-  const missionsInfo = useSelector((state) => state);
+  const missionsInfo = useSelector((state) => state.missions);
 
   return (
     <div className="myMissions">

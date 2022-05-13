@@ -4,7 +4,11 @@ import { createActionForReserve, createActionForCancel } from '../rocketsRedux/f
 
 const Rocket = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state);
+  // useEffect(() => {
+  //   dispatch(fetchData());
+  //   console.log('rerendered rockets');
+  // }, []);
+  const dataRockets = useSelector((state) => state.rockets);
   const reserveHandler = (id) => {
     dispatch(createActionForReserve(id));
   };
@@ -15,9 +19,9 @@ const Rocket = () => {
 
   return (
     <section className="main-rocket-div">
-      {data.map((rocket) => (
+      {dataRockets.map((rocket) => (
         <div key={rocket.id} className="rocket-divider" id={rocket.id}>
-          <img className="rocket-images" src={rocket.flickr_images[0]} alt="Images" />
+          <img className="rocket-images" src={rocket.flickr_images} alt="Images" />
           <div>
             <h3>{rocket.rocket_name}</h3>
             <p>
