@@ -1,25 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800');
-@import url('https://fonts.googleapis.com/css?family=Roboto:thin,extra-light,light,100,200,300,400,500,600,700,800');
-
-//font
-$montserrat: 'Montserrat', sans-serif;
-$roboto: 'Roboto', sans-serif;
-
-//colors
 $blue: #00ff;
 $pinkishGrey: #c4c4c4;
-$warmGrey: #6d757d;
-$lightGrey: #f2f2f2;
-$paleGrey: #dee2e6;
-$azure: #18a2b8;
 
 * {
   margin: 0;
   padding: 0;
-}
-
-.App {
-  font-family: $roboto;
 }
 
 //NAVBAR
@@ -40,11 +24,11 @@ nav {
     list-style: none;
     margin-right: 12px;
     color: $blue;
+  }
 
-    .link {
-      color: $blue;
-      text-decoration: none;
-    }
+  li:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 }
 
@@ -63,99 +47,4 @@ h1 {
 .profile {
   border-left: 2px solid #000;
   padding-left: 10px;
-}
-
-//MISSIONS
-table {
-  border-collapse: collapse;
-  border: 1px solid $paleGrey;
-  margin: 0 15px;
-
-  th,
-  td {
-    text-align: left;
-    vertical-align: middle;
-    border: 1px solid $paleGrey;
-    padding: 0.4rem;
-    margin: 0;
-  }
-
-  tbody {
-    tr:nth-child(odd) {
-      background-color: $lightGrey;
-    }
-  }
-}
-
-div.myMissions {
-  padding-left: 5rem;
-
-  h2 {
-    margin-top: 1rem;
-  }
-
-  button {
-    margin-top: 7px;
-    font-size: 1rem;
-  }
-}
-
-//MissionButtons
-.member {
-  padding: 0.17rem;
-  font-weight: bold;
-  background-color: $warmGrey;
-  border: none;
-  border-radius: 4px;
-  color: #f2f2f2;
-  width: 7rem;
-}
-
-.member.true {
-  background-color: $azure;
-}
-
-.join {
-  padding: 0.4rem;
-  background-color: transparent;
-  color: #4b5156;
-  border: 1px solid #4b5156;
-  border-radius: 4px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.join:hover {
-  background-color: $warmGrey;
-  color: #f2f2f2;
-}
-
-.join.true {
-  border-color: #e04f5c;
-  color: #e04f5c;
-}
-
-.join.true:hover {
-  background-color: #e04f5c;
-  color: #f2f2f2;
-}
-
-.leave {
-  padding: 6px 8px;
-  background-color: #dfdfdf;
-  border: 1px solid #d5d5d5;
-  border-radius: 4px;
-  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
-
-  &:hover {
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
-    transform: scale(1.05);
-    transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-}
-
-.joined {
-  margin-left: 13px;
 }
