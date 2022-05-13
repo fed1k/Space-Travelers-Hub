@@ -8,7 +8,6 @@ const MyProfile = () => {
   const cancelHandler = (id) => {
     dispatch(createActionForCancel(id));
   };
-  // data.map((i) => (i.reserved ? console.log(i) : console.log(null)));
   return (
     <div className="myProfile">
       <div>
