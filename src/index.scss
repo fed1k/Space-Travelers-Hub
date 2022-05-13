@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800');
 @import url('https://fonts.googleapis.com/css?family=Roboto:thin,extra-light,light,100,200,300,400,500,600,700,800');
 
@@ -63,6 +64,46 @@ h1 {
 .profile {
   border-left: 2px solid #000;
   padding-left: 10px;
+}
+
+.rocket-images {
+  width: 200px;
+  height: 150px;
+}
+
+// #cancel {
+//   background-color: green;
+//   color: white;
+// }
+
+.main-rocket-div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 15px 10%;
+}
+
+.rocket-divider {
+  display: flex;
+  gap: 14px;
+  width: 70%;
+  align-items: center;
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    padding: 8px 0;
+    line-height: 24px;
+    font-family: 'Inter', serif;
+  }
+}
+
+button {
+  padding: 6px 8px;
+  background-color: #dfdfdf;
+  border: 1px solid #d5d5d5;
 }
 
 //MISSIONS
@@ -154,6 +195,23 @@ div.myMissions {
     transform: scale(1.05);
     transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
+
+  &:active {
+    transform: scale(1.01);
+  }
+}
+
+.reserve-text {
+  background-color: lightblue;
+  padding: 4px;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.myProfile {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20%;
 }
 
 .joined {
