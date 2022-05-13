@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import planet from '../img/planet.png';
 
 const Navbar = () => (
@@ -12,9 +12,41 @@ const Navbar = () => (
     </div>
     <div>
       <ul>
-        <Link to="/">Rockets</Link>
-        <Link to="/Missions">Missions</Link>
-        <Link to="/myProfile">My Profile</Link>
+        <li>
+          <NavLink
+            className="link"
+            to="/"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Rockets
+          </NavLink>
+
+        </li>
+        <li>
+          <NavLink
+            to="/missions"
+            className="link"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Missions
+          </NavLink>
+        </li>
+        <li className="profile">
+          <NavLink
+            to="/myprofile"
+            className="link"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            My Profile
+          </NavLink>
+
+        </li>
       </ul>
     </div>
   </nav>
