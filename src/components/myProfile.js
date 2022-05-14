@@ -1,24 +1,32 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { createActionForCancel } from '../rocketsRedux/fetchData';
+import { createActionForCancel } from '../redux/rockets/fetchData';
+import { leaveButton } from '../redux/missions/missions';
 
 const MyProfile = () => {
   const dataRockets = useSelector((state) => state.rockets);
+  const reservedRockets = dataRockets.filter((rocket) => rocket.reserved);
+
   const dataMissions = useSelector((state) => state.missions);
+  const reservedMissions = dataMissions.filter((mission) => mission.reserved);
+
   const dispatch = useDispatch();
   const cancelHandler = (id) => {
     dispatch(createActionForCancel(id));
   };
+  const leaveMission = (id) => {
+    dispatch(leaveButton(id));
+  };
+
   return (
     <div className="profiles">
       <div className="myMissions">
         <div>
           <h1>My Missions</h1>
-          {dataMissions.map((i) => i.reserved && (
-            <div className="joined">
-              <h2>{i.mission_name}</h2>
-              <Link to="/missions" className="leavetext"><button type="button" className="leave">To leave</button></Link>
+          {reservedMissions.map((mission) => (
+            <div key={mission.id}>
+              <h2>{mission.name}</h2>
+              <button type="button" className="leave" onClick={() => leaveMission(mission.id)}>Leave mission</button>
             </div>
           ))}
         </div>
@@ -27,10 +35,10 @@ const MyProfile = () => {
       <div className="myProfile">
         <div className="rockets-container">
           <h1>My Rockets</h1>
-          {dataRockets.map((i) => i.reserved && (
-            <div className="profile-rocket-div">
-              <h1>{i.rocket_name}</h1>
-              <button type="button" onClick={() => cancelHandler(i.id)}>Cancel Reservation</button>
+          {reservedRockets.map((rocket) => (
+            <div key={rocket.id}>
+              <h1>{rocket.name}</h1>
+              <button type="button" onClick={() => cancelHandler(rocket.id)}>Cancel Reservation</button>
             </div>
           ))}
         </div>

@@ -1,43 +1,63 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { toggleButton } from '../rocketsRedux/missions';
+// import { toggleButton } from '../redux/missions/missions';
+import { leaveButton, joinButton } from '../redux/missions/missions';
 
 const Mission = (props) => {
-  const {
-    name, id, description, joined,
-  } = props;
+  const { mission } = props;
+
   const dispatch = useDispatch();
-  const join = () => {
-    dispatch(toggleButton(id));
+
+  const join = (id) => {
+    dispatch(joinButton(id));
+  };
+
+  const leave = (id) => {
+    dispatch(leaveButton(id));
   };
 
   return (
     <tr>
-      <th>{name}</th>
-      <td>{description}</td>
+      <th>{mission.name}</th>
+      <td>{mission.description}</td>
       <td>
-        <button type="button" className={`member ${joined}`}>
-          {joined ? 'Active Member' : 'NOT A MEMBER'}
-        </button>
+        {!mission.reserved && (
+          <button type="button" className="inactive">NOT A MEMBER</button>
+        )}
+        {mission.reserved && (
+          <button type="button" className="activeMember">Active Member</button>
+        )}
       </td>
       <td>
-        <button type="button" className={`join ${joined}`} onClick={join}>
-          {joined ? 'Leave Mission' : 'Join Mission'}
-        </button>
+        {!mission.reserved && (
+          <button type="button" onClick={() => { join(mission.id); }} className="notJoined">
+            Join Mission
+          </button>
+        )}
+        {mission.reserved && (
+          <button type="button" onClick={() => { leave(mission.id); }} className="joinedMission">
+            Leave Mission
+          </button>
+        )}
       </td>
     </tr>
   );
 };
 
 Mission.defaultProps = {
-  joined: false,
+  mission: [],
 };
+
 Mission.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  joined: PropTypes.bool,
+  mission: PropTypes.shape(
+    {
+      id: PropTypes.string,
+      name: PropTypes.string,
+      description: PropTypes.string,
+      reserved: PropTypes.bool,
+    },
+  ),
 };
 
 export default Mission;

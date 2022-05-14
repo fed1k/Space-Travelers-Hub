@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchData, { createActionForReserve, createActionForCancel } from '../rocketsRedux/fetchData';
+import { createActionForReserve, createActionForCancel } from '../redux/rockets/fetchData';
 
 const Rocket = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchData());
-  }, []);
   const dataRockets = useSelector((state) => state.rockets);
+  const dispatch = useDispatch();
+
   const reserveHandler = (id) => {
     dispatch(createActionForReserve(id));
   };
@@ -20,9 +17,9 @@ const Rocket = () => {
     <section className="main-rocket-div">
       {dataRockets.map((rocket) => (
         <div key={rocket.id} className="rocket-divider" id={rocket.id}>
-          <img className="rocket-images" src={rocket.flickr_images} alt="Images" />
+          <img className="rocket-images" src={rocket.image} alt="Images" />
           <div>
-            <h3>{rocket.rocket_name}</h3>
+            <h3>{rocket.name}</h3>
             <p>
               {rocket.reserved && (<span className="reserve-text">Reserved</span>)}
               {rocket.description}
@@ -31,7 +28,7 @@ const Rocket = () => {
               <button type="button" onClick={() => reserveHandler(rocket.id)}>Reserve Rocket</button>
             )}
             {rocket.reserved && (
-            <button type="button" onClick={() => cancelHandler(rocket.id)}>Cancel Reservation</button>
+              <button type="button" onClick={() => cancelHandler(rocket.id)}>Cancel Reservation</button>
             )}
           </div>
         </div>
