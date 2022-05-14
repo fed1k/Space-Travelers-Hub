@@ -29,9 +29,7 @@ Array [
 
 exports[`renders profile in an expected way 1`] = `
 Array [
-  <div
-    className="profiles"
-  >
+  <div>
     <div
       className="myMissions"
     >
