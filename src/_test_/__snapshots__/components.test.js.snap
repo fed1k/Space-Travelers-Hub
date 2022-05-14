@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders missions in an expected way 1`] = `
+Array [
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Mission
+          </th>
+          <th>
+            Description
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            ChangeStatus
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </section>,
+  " ",
+]
+`;
+
+exports[`renders profile in an expected way 1`] = `
+Array [
+  <div
+    className="profiles"
+  >
+    <div
+      className="myMissions"
+    >
+      <div>
+        <h1>
+          My Missions
+        </h1>
+      </div>
+    </div>
+    <div
+      className="myProfile"
+    >
+      <div
+        className="rockets-container"
+      >
+        <h1>
+          My Rockets
+        </h1>
+      </div>
+    </div>
+  </div>,
+  " ",
+]
+`;
+
+exports[`renders rockets in an expected way 1`] = `
+Array [
+  <section
+    className="main-rocket-div"
+  />,
+  " ",
+]
+`;
