@@ -1,6 +1,6 @@
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
-import store from '../rocketsRedux/store';
+import store from '../redux/configureStore';
 import Rocket from '../components/Rockets';
 import Missions from '../Pages/missionPage';
 import MyProfile from '../components/myProfile';
