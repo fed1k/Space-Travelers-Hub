@@ -1,7 +1,7 @@
 const TOGGLE_BUTTON = 'TOGGLE_BUTTON';
 
 const requestData = (message) => ({
-  type: 'GET',
+  type: 'FETCH',
   payload: message,
 });
 
@@ -18,7 +18,7 @@ export const toggleButton = (id) => ({
 
 export const missionsReducer = (state = [], action) => {
   switch (action.type) {
-    case 'GET': {
+    case 'FETCH': {
       return action.payload;
     }
 

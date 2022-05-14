@@ -1,7 +1,7 @@
 export const myReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
-    case 'GET':
+    case 'FETCH':
       return action.payload;
     case 'RESERVE':
       newState = state.map((rocket) => {
@@ -21,7 +21,7 @@ export const myReducer = (state = [], action) => {
 };
 
 const createActionForPutDataToStore = (info) => ({
-  type: 'GET',
+  type: 'FETCH',
   payload: info,
 });
 

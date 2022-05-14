@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { toggleButton } from './missions';
+import { toggleButton } from '../rocketsRedux/missions';
 
 const Mission = (props) => {
   const {
