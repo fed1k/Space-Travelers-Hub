@@ -10,6 +10,8 @@ In this project, we work with a real live data from the SpaceX API. We built a w
 
 ![Screenshot from 2022-05-14 21-28-13](https://user-images.githubusercontent.com/86133437/168444195-fca0be98-c6d0-4da1-8367-9f31df4222a4.png)
 
+## [Live here](https://space-travellers-site.netlify.app/)
+
 ## Built With
 
 - React
